@@ -1,3 +1,12 @@
+== Run Notes
+
+java -jar  target/angular-maven-0.0.1-SNAPSHOT.jar
+
+http://localhost:8080/
+
+
+
+== Below original doc from spring
 = Creating a New Application with Spring Boot and Angular
 
 Spring Boot works great as a back end for an Angular application but it can be difficult to get the ball rolling. Most Spring users are comfortable with Java and the tools that are used to create and build the backend server. The front end can be written with plain old JavaScript as long as it is relatively simple, and you are willing to search for the rare examples and tutorials in this style. But these days you are much more likely to find documentation and tutorials that use tools like `Typescript`, `node.js`, `npm` and the Angular CLI.
