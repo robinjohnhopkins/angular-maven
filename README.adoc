@@ -5,6 +5,15 @@ java -jar  target/angular-maven-0.0.1-SNAPSHOT.jar
 http://localhost:8080/
 
 
+== Change from java angular to java angularjs
+added app which replaces src/app
+thus app/index.html replaces src/index.html
+
+The angularjs app popped in is originally here
+
+https://github.com/angular/angular-phonecat
+
+
 
 == Below original doc from spring
 = Creating a New Application with Spring Boot and Angular
