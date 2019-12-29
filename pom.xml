@@ -52,6 +52,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+          <plugin>
+            <artifactId>exec-maven-plugin</artifactId>
+            <groupId>org.codehaus.mojo</groupId>
+            <version>1.6.0</version>
+            <executions>
+              <execution>
+                <id>mk link</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>ln</executable>
+                  <arguments>
+                    <argument>-s</argument>
+                    <argument>${project.basedir}/node_modules</argument>
+                    <argument>${project.basedir}/target/classes/static/node_modules</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -75,12 +97,30 @@
                   <execution>
                     <id>npm-build</id>
                     <goals>
+                      <goal>npm</goal>
+                    </goals>
+                    <configuration>
+                      <arguments>install</arguments>
+                    </configuration>
+                 </execution>
+                  <execution>
+                    <id>npm-build-copy-app</id>
+                    <goals>
+                      <goal>npm</goal>
+                    </goals>
+                    <configuration>
+                      <arguments>run-script copy-app</arguments>
+                    </configuration>
+                  </execution>
+                  <!-- <execution>
+                    <id>npm-build</id>
+                    <goals>
                     <goal>npm</goal>
                     </goals>
                     <configuration>
                       <arguments>run-script copy-all</arguments>
                     </configuration>
-                  </execution>
+                  </execution>-->
                     <!--<execution>-->
                         <!--<id>npm-build</id>-->
                         <!--<goals>-->
