@@ -35,6 +35,7 @@
     "postupdate-deps": "npm run copy-libs",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/lib -C",
     "copy-all": "cpx \"node_modules/**/*\" target/classes/static/node_modules  -L || cpx \"app/**/*\" target/classes/static/ -C  || echo boo",
+    "copy-app": "cpx \"app/**/*\" target/classes/static/ -C  || echo boo",
     "prestart": "npm install",
     "start": "http-server ./app -a localhost -p 8000 -c-1",
     "pretest": "npm install",
