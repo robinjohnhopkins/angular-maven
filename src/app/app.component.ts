@@ -10,8 +10,12 @@ export class AppComponent {
   title = 'Demo';
   data = {};
   data2 = {};
+  clickMessage = '';
   constructor(private http: HttpClient) {
     http.get('resource').subscribe(data => this.data = data);
     http.get('rude').subscribe(data => this.data2 = data);
+  }
+  onClickMe() {
+    this.clickMessage = 'You are my hero! ' + new Date();
   }
 }

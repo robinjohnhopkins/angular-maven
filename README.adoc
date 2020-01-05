@@ -4,6 +4,11 @@ java -jar  target/angular-maven-0.0.1-SNAPSHOT.jar
 
 http://localhost:8080/
 
+== continuous build run
+
+```
+./node_modules/onchange/cli.js -v -i -k -p 100  src/** -- ./buildandrun.sh
+```
 
 
 == Below original doc from spring
