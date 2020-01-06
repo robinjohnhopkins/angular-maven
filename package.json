@@ -21,6 +21,8 @@
     "@angular/router": "^7.2.15",
     "bootstrap": "^3.4.1",
     "core-js": "^2.6.11",
+    "easeljs": "^1.0.2",
+    "gsap": "^3.0.4",
     "jquery": "^3.4.1",
     "onchange": "^6.1.0",
     "rxjs": "~6.3.3",

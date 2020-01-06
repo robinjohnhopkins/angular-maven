@@ -72,15 +72,25 @@
                             <goal>npm</goal>
                         </goals>
                     </execution>
-                    <execution>
-                        <id>npm-build</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>run-script build</arguments>
-                        </configuration>
-                    </execution>
+                  <execution>
+                    <id>npm-build</id>
+                    <goals>
+                      <goal>npm</goal>
+                    </goals>
+                    <configuration>
+                      <arguments>run-script build</arguments>
+                    </configuration>
+                  </execution>
+                  <execution>
+                    <id>npm-build-copy</id>
+                    <goals>
+                      <goal>npm</goal>
+                    </goals>
+                    <configuration>
+                      <arguments>run-script build</arguments>
+                    </configuration>
+                  </execution>
+
                     <!--<execution>-->
                         <!--<id>npm-test</id>-->
                         <!--<goals>-->
@@ -93,6 +103,29 @@
                     <!--</execution>-->
                 </executions>
             </plugin>
+          <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+              <execution>
+                <id>copy-resources</id>
+                <!-- here the phase you need -->
+                <phase>compile</phase>
+                <goals>
+                  <goal>copy-resources</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${basedir}/target/classes/static</outputDirectory>
+                  <resources>
+                    <resource>
+                      <directory>additional</directory>
+                      <filtering>true</filtering>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
     </build>
 

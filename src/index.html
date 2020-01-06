@@ -7,11 +7,21 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script type="text/javascript" src="easeljs-0.7.1.min.js"></script>
+  <script type="text/javascript" src="TweenMax.min.js"></script>
+
+
 </head>
 <body>
-  <app-root></app-root>
+
   <div id="overlay">
+    <canvas id="projector">Your browser does not support the Canvas element.</canvas>
     <div id="text">Overlay Text</div>
+    <app-root></app-root>
   </div>
+
+
+  <script type="text/javascript" src="particle.js"></script>
 </body>
 </html>
